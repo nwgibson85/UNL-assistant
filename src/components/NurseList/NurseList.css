@@ -1,0 +1,89 @@
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+li:nth-child(even) {
+    background-color:grey;
+}
+
+li:nth-child(odd) {
+    background-color: lightgrey;
+}
+
+.nurse_box0,
+.nurse_box2,
+.nurse_box4,
+.nurse_box6,
+.nurse_box8,
+.nurse_box10 {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    background-color: lightgrey;
+}
+
+.nurse_box1,
+.nurse_box3,
+.nurse_box5,
+.nurse_box7,
+.nurse_box9,
+.nurse_box11 {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    background-color: grey;
+}
+
+.remove_RN,
+.remove_room,
+.add_RN,
+.add_room {
+  border-radius: 50%;
+  border: none;
+  height: 1.5em;
+  width: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: slategray;
+}
+
+#id_0, #id_2, #id_4,
+#id_6, #id_8, #id_10 {
+    border-radius: 50%;
+    border: none;
+    height: 1.5em;
+    width: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+}
+
+#id_1, #id_3, #id_5,
+#id_7, #id_9, #id_11 {
+    border-radius: 50%;
+    border: none;
+    height: 1.5em;
+    width: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
+}
+
+select {
+    margin-left: 3em;
+}

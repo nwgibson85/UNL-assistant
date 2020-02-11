@@ -1,8 +1,7 @@
 import React from 'react';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+import TechVariable from '../Tech/TechVariable';
 import NurseVariable from '../Nurse/NurseVariable/NurseVariable';
-import {nurseArray} from '../../nurse-helper';
+import {makeNurseFloatArr, makeTechFloatArr} from '../../nurse-helper';
 import './FloatList.css';
 
 export default class FloatList extends React.Component {
@@ -11,34 +10,41 @@ export default class FloatList extends React.Component {
         // Will need to change it to use only the nurses on the schedule for next shift. 
 
         // Make an array of specific date to sort, sort then realign main array
-        const sortedFloatDatesArr = nurseArray.sort(function(a, b) {
-            a = new Date(a.dateModified);
-            b = new Date(b.dateModified);
-            return a>b ? -1 : a<b ? 1 : 0;
-        });
-        const oldestFloatDatesArr = sortedFloatDatesArr.reverse();
+        const floatArr = makeNurseFloatArr();
+        const techFloatArr = makeTechFloatArr();
         return (
-            <div className = 'floatList'>
-                <header className='App__header'>
-                    <Header />
-                </header>
+            <section className = 'float_lists'>
+                <h2>Scheduled Nurses</h2>
                 <ul className = 'float_List_Ul'>
-                    {oldestFloatDatesArr.map((nurse, i) =>
-                        <li key = {i}>
+                    {floatArr.map((nurse, i) =>
+                        <li key = {i}
+                            className = 'float_li'>
                             <NurseVariable
                                 // will need to change id to db id rather than phone number.
                                 className = {`floatList_${i}`}
-                                id = {nurse.phone}
-                                name = {nurse.name}
-                                float = {nurse.float}>
+                                id = {nurse.id}>
+                                    <p>{nurse.nick_name}</p> 
+                                    <p>{nurse.float}</p>
                             </NurseVariable>
                         </li>
                     )}
                 </ul>
-                <section className = 'App_footer'>
-                    <Footer />
-                </section>
-            </div>
+                <h2>Scheduled Techs</h2>
+                <ul className = 'float_List_Ul'>
+                    {techFloatArr.map((tech, i) =>
+                        <li key = {i}
+                            className = 'float_li'>
+                            <TechVariable
+                                // will need to change id to db id rather than phone number.
+                                className = {`floatList_${i}`}
+                                id = {tech.i}>
+                                    <p>{tech.name}</p>
+                                    <p>{tech.float}</p>
+                            </TechVariable>
+                        </li>
+                    )}
+                </ul>
+            </section>
         );
     }
 }

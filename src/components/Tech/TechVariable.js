@@ -1,18 +1,18 @@
 import React from 'react';
-import './NurseVariable';
+import './TechVariable';
 
-export default function NurseVariable(props) {
+export default function TechVariable(props) {
     const {tag, className, children, ...otherProps} = props;
     return React.createElement(
         props.tag,
         {
-            className: ['nurseV', props.className].join(' '),
+            className: ['techV', props.className].join(' '),
             ...otherProps
         },
         props.children
     )
 }
 
-NurseVariable.defaultProps ={
+TechVariable.defaultProps ={
     tag: 'a',
 }

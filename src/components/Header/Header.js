@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-// import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 // import TokenService from '../../services/token-service'
 import './Header.css'
 
@@ -44,18 +44,36 @@ export default class Header extends Component {
 //        ? this.renderLogoutLink()
 //        : this.renderLoginLink()}
 //</nav>
+    getDate() {
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let yyyy = today.getFullYear();
+
+        today = mm + '/' + dd + '/' + yyyy;
+        return today;
+    }
 
     render() {
-        const backArrow = '<';
-        const forwardArrow = '>'
+        const backArrow = '< ';
+        const forwardArrow = ' >';
+        const date = this.getDate();
         return (
             <nav role="navigation">
-                <p>Date</p>
-                <p>{backArrow} Shift {forwardArrow}</p>
-                <p>log in / log out</p>
-            </nav>
-            
-                
+                <h3>{date}</h3>
+                <h3>
+                    {backArrow} 
+                    <Link
+                        to = '/'>
+                        Shift 
+                    </Link>
+                    <Link 
+                        to = '/shift-maker'>
+                         {forwardArrow}
+                    </Link>
+                </h3>
+                <h3>log in / log out</h3>
+            </nav>  
         )
         
     }

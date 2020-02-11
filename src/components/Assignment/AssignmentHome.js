@@ -5,7 +5,7 @@ export default class AssignmentHome extends React.Component {
     render() {
         return (
             <main className='main_App'>
-                <h1>UNL-assistant app</h1>
+                <h1>Night shift Feb. 12th, 2020</h1>
                 <NurseList />
             </main>
         );

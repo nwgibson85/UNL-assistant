@@ -1,12 +1,13 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-// import ShiftMaker from '../Shift-Maker/Shift-Maker';
+import ShiftMaker from '../Shift-Maker/Shift-Maker';
 import StandbyList from '../StandbyList/StandbyList';
 import FloatList from '../FloatList/FloatList';
 import TripleList from '../TripleList/TripleList';
 import AssignmentHome from '../Assignment/AssignmentHome';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
+import './App.css';
 
 class App extends React.Component { 
     
@@ -23,9 +24,9 @@ class App extends React.Component {
                             path = '/' 
                             component = {AssignmentHome} />
 
-                        {/* <Route 
+                        <Route 
                             path = '/shift-maker' 
-                            component = {ShiftMaker} /> */}
+                            component = {ShiftMaker} />
                         
                         <Route 
                             path = '/standby-list' 

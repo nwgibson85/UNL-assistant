@@ -9,17 +9,17 @@ export default class Footer extends Component {
             <footer className = 'List_Links'>
                 <Link 
                     to = '/standby-list'>
-                    Standby list
+                    <h5>Standby list</h5>
                 </Link>
                 
                 <Link
                     to='/float-list'>
-                    Float List
+                    <h5>Float List</h5>
                 </Link>
 
                 <Link
                     to = '/triple-list'>
-                    triple list
+                    <h5>triple list</h5>
                 </Link>
             </footer>
         )
